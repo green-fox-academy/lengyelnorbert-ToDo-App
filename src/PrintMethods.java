@@ -7,7 +7,7 @@ import javax.sound.sampled.Line;
 
 public class PrintMethods {
 
-  public void NoArgsGivenStandardInfo() {
+  public void noArgsGivenStandardInfo() {
     Path standardInfoFilePath = Paths.get("./standardinfo.txt");
     try {
       List<String> standardInfo = Files.readAllLines(standardInfoFilePath);
@@ -15,7 +15,23 @@ public class PrintMethods {
         System.out.println(standardInfo.get(i));
       }
     } catch (IOException ex) {
-      System.out.println("Something went wrong");
+      System.out.println("Something went wrong with opening the info txt.");
+    }
+  }
+
+  public void listAllTheItems() {
+    Path todoDataFilePath = Paths.get("./tododatas.txt");
+    try {
+      List<String> allItems = Files.readAllLines(todoDataFilePath);
+      if (allItems.size() == 0) {
+        System.out.println("No todos for today! :)");
+      } else {
+        for (int i = 0; i < allItems.size(); i++) {
+          System.out.println(i + 1 + " " + allItems.get(i));
+        }
+      }
+    } catch (IOException e) {
+      System.out.println("Something went wrong with opening the data txt.");
     }
   }
 }
