@@ -1,3 +1,4 @@
 Walk the dog
-Buy milk
-Do homework
+ezt kapd ki
+ [ ] This one is not done
+[X]] Feed myself

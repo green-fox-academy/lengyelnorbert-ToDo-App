@@ -7,7 +7,7 @@ import javax.sound.sampled.Line;
 
 public class PrintMethods {
 
-  public void noArgsGivenStandardInfo() {
+  public static void noArgsGivenStandardInfo() {
     Path standardInfoFilePath = Paths.get("./standardinfo.txt");
     try {
       List<String> standardInfo = Files.readAllLines(standardInfoFilePath);
@@ -19,7 +19,7 @@ public class PrintMethods {
     }
   }
 
-  public void listAllTheItems() {
+  public static void listAllTheItems() {
     Path todoDataFilePath = Paths.get("./tododatas.txt");
     try {
       List<String> allItems = Files.readAllLines(todoDataFilePath);
