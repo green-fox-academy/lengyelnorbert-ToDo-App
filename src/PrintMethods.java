@@ -3,7 +3,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
-import javax.sound.sampled.Line;
 
 public class PrintMethods {
 
@@ -20,18 +19,18 @@ public class PrintMethods {
   }
 
   public static void listAllTheItems() {
-    Path todoDataFilePath = Paths.get("./tododatas.txt");
     try {
-      List<String> allItems = Files.readAllLines(todoDataFilePath);
+      List<String> allItems = Handler.fileRead();
       if (allItems.size() == 0) {
         System.out.println("No todos for today! :)");
       } else {
+        System.out.println("Your todo list:");
         for (int i = 0; i < allItems.size(); i++) {
           System.out.println(i + 1 + " " + allItems.get(i));
         }
       }
-    } catch (IOException e) {
-      System.out.println("Something went wrong with opening the data txt.");
+    } catch (Exception e) {
+      System.out.println("Something went wrong... Please try again, here is some help for You:");
     }
   }
 }
